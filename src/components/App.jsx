@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ToDoList from "./ToDoList"
-
+import InputArea from "./InputArea"
 
 function App() {
   const [inputArea, setInputArea] = useState("");
@@ -39,12 +39,9 @@ function deleteItem(id) {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input onChange={inputHandler} type="text" value={inputArea} />
-        <button onClick={buttonHandler}>
-          <span>Add</span>
-        </button>
-      </div>
+
+        <InputArea onChanged={inputHandler} value={inputArea} buttonClick={buttonHandler}/>
+      
       <div>
         <ul>
         {list.map((slist, index) => {
