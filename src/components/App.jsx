@@ -17,10 +17,20 @@ function App() {
     setList(function(pre) {
       return [...pre, inputArea];
     });
-
 setInputArea("");
-
   }
+
+function deleteItem(id) {
+  setList(
+    prev => {
+      return prev.filter(
+        (item , index) => {
+          return index != id
+        }
+      )
+    }
+  )
+}
 
 
 
@@ -38,7 +48,7 @@ setInputArea("");
       <div>
         <ul>
         {list.map((slist, index) => {
-          return <ToDoList key={index} id={index} list={slist}/>;
+          return <ToDoList key={index} onChecked={deleteItem} id={index} list={slist}/>;
         })}
 
         </ul>
