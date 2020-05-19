@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ToDoList from "./ToDoList"
+
 
 function App() {
   const [inputArea, setInputArea] = useState("");
@@ -9,7 +11,9 @@ function App() {
     setInputArea(data);
   }
 
+
   function buttonHandler(event) {
+
     setList(function(pre) {
       return [...pre, inputArea];
     });
@@ -17,6 +21,8 @@ function App() {
 setInputArea("");
 
   }
+
+
 
   return (
     <div className="container">
@@ -31,9 +37,10 @@ setInputArea("");
       </div>
       <div>
         <ul>
-          {list.map(slist => {
-            return <li>{slist} </li>;
-          })}
+        {list.map((slist, index) => {
+          return <ToDoList key={index} id={index} list={slist}/>;
+        })}
+
         </ul>
       </div>
     </div>
