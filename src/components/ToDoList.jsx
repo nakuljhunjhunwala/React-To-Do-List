@@ -1,8 +1,6 @@
-import React , {useState} from "react";
+import React from "react";
 
 function ToDoList(props) {
-
-const [isDone , setIsDone] = useState(false);
 
   return (
  <li onClick={() => {

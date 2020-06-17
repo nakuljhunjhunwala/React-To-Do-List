@@ -25,7 +25,7 @@ function deleteItem(id) {
     prev => {
       return prev.filter(
         (item , index) => {
-          return index != id
+          return index !== id
         }
       )
     }
